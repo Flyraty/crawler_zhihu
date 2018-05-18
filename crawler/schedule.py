@@ -116,7 +116,7 @@ class SpiderSchedule(object):
 
 
 if __name__ == '__main__':
-    user_schedule = SpiderSchedule('13488743118', '123chifanle')
+    user_schedule = SpiderSchedule('', '')
     # user_schedule.schedule_main()
     user_schedule.schedule_user_spider()
     # user_schedule.schedule_column_spider()
