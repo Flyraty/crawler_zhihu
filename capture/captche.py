@@ -20,8 +20,8 @@ class GetCaptche(object):
         if not os.path.exists('./train'):
             os.mkdir('./train')
         os.chdir('./train')
-        username = '13488743118'
-        password = '123chifanle'
+        username = ''
+        password = ''
         zhihu = Login(username, password)
         s = zhihu.login()
         for i in range(0, count):
