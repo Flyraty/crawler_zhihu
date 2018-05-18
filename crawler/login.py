@@ -180,5 +180,5 @@ class ZhihuAccount(object):
 
 if __name__ == '__main__':
     account = ZhihuAccount()
-    # account.login(username='13488743118', password='123chifanle', load_cookies=True)
+    # account.login(username='', password='', load_cookies=True)
     pass
