@@ -22,7 +22,7 @@ ua = UAProxy()
 headers = ua.ua_proxy()
 
 # 简单维护url列表
-s = ZhihuAccount().login('15754314569', '139ilyf.')
+s = ZhihuAccount().login('', '')
 new_url = []
 old_url = []
 rows = db.query("select Relation from Relation group by Relation")
