@@ -1,3 +1,17 @@
+项目的使用
+
+1,爬虫在crawler目录下，由schedule调度，如果要爬取用户信息，则可以在命令行下执行python3 schedule.py userspide, 具体参数请查看shedule.py中
+ schedule类.
+ 
+2,大v关系爬虫直接运行relation.py即可
+
+3,数据可视化部分在datapars目录下，直接运行statitics.py即可。前提是已经有与本项目相关的数据库及表结构。数据库部分可以查看sql目录下的文件
+
+4,本项目依赖的第三方库主要有dataset, sqlalchemy, pyecharts, pillow
+ 
+5,我个人是将爬虫运行在服务器上的，大概一天有6w的数据量入库。由于我设置的是每爬3w条休息一小时，所凌晨时间段也在运行，每天早上醒来会收到知乎的安全验证。
+  这里可以设置爬虫在凌晨时间段不运行
+
 本文档用来记录zhihu项目各个模块
 本项目遵循PEP8代码风格, 支持python版本为python3.5, python3.6,每一个python文件下都带有测试main用来验证当前文件可行性
 本项目类名采用驼峰式命名法,变量名和函数名采用下划线命名
@@ -45,8 +59,7 @@ FAQ2:work字段几乎没有, 从introduction 和headline中提取
 1, 数据清洗模块cleandata.py
    .1 主要用于清洗Education, Location, Work字段, 从Headline提取补全Work字段
    .2
-2, 数据统计可视化模块statistics.py, 可视化部分基于开源的pyecharts
-
+2, 数据统计可视化模块statistics.py, 可视化部分基于开源的pyechart
 3, querysql.py 主要统计了一些查询信息的sql
 
 四, 日志收集处理模块
@@ -56,7 +69,7 @@ FAQ2:work字段几乎没有, 从introduction 和headline中提取
 五, 数据库处理模块(数据库选用mysql还是MongoDB,存储利用dataset,建表查表采用sqlalchemy)
 FAQ1：字段比较多，考虑要不要直接存储成mongo(不是很好,因为mongo不太适合处理单条信息量大的数据)
 FAQ2：dataset高层库没有显式的关闭数据库连接的方法，直接继承sqlalchemy的数据连接池复用,这里的原理不太清楚,一定程度上会出现mysql
-      1045 error,解决办法是在数据库层面增大连接数，或者改用低层库如pymysql.这个地方还是要搞懂sqlalchemy数据库连接池的原理。
+      1045 error,解决办法是在数据库层面增大连接数，或者改用低层库如pymysql.这个地方还是要搞懂sqlalchemy数据库连接池的原
 数据库选用Mysql
 1, 数据表生成模块 orm.py
 2, 数据库操作模块 sqloperate 模块
@@ -65,6 +78,5 @@ FAQ2：dataset高层库没有显式的关闭数据库连接的方法，直接继
 六, Adding
 1, UserInfo 表添加Relation字段, 用于制作人物互相关注图
 2, crawler模块添加relation.py , 用于爬取关系图, 暂时不加入调度schedule.py 中
-
 
 自己没有很好的解决代码的复用
