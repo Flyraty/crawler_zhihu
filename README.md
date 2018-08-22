@@ -4,8 +4,8 @@
 
 
 ## 本项目参考
-1.http://pyecharts.org
+1. http://pyecharts.org
 
-1.https://zhuanlan.zhihu.com/p/34073256
+2. https://zhuanlan.zhihu.com/p/34073256
 
 
